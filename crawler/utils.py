@@ -9,6 +9,7 @@ import requests
 import random
 import traceback
 import logging
+from bs4 import BeautifulSoup
 
 
 # Logging configuration
@@ -57,4 +58,3 @@ def connect_url_proxy(url, proxy_list):
 		return html_response
 	except:
 		logger.critical("Connnection error. Try again or check the availability of the proxy.")
-	

@@ -14,13 +14,19 @@ class Parser(BeautifulSoup):
 	# Depending on the type it gathers all the links that redirect to the main repository
 	def link_finder(self):
 		if self.type == 'Repositories':
-			repo_list = self.soup.findAll('ul',attrs={'class':'repo-list'})
-			for div in repo_list:
-				links = div.findAll('a')
-				for a in links:
-					if a['class'] == ['v-align-middle']:
-						self.links += [self.base_url + a['href']]
-			return self.links
+			link_obj = self.soup.findAll('a', attrs={'class': 'v-align-middle'})
+			for a in link_obj:
+				self.links += [self.base_url + a['href']]
+		elif self.type == 'Wikis':
+			link_obj = self.soup.findAll('a', attrs={'class': 'h5'})
+			for a in link_obj:
+				self.links += [self.base_url + a['href'] + '/wiki']
+		elif self.type == 'Issues':
+			link_obj = self.soup.findAll('h3', attrs={'class': 'text-normal pb-1'})
+			for h in link_obj:
+				self.links += [self.base_url + h.find('a')['href']]
+		return self.links
+
 
 	def error_handler(self, message):
-		pass
+		logger.error('Parser error. Unable to finish the task.')

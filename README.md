@@ -82,7 +82,9 @@ Answer:
 ## Deploy instructions
 
 
-## Usage example
+## Usage
+
+
 ### Example 1
 * `python3 main.py example1.json`
 * `python3 main.py example2.json`
