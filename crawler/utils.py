@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sys
 import os
 import json
@@ -5,7 +8,17 @@ import urllib
 import requests
 import random
 import traceback
-from utils import *
+import logging
+
+
+# Logging configuration
+if sys.argv[-1] == '--DEBUG':
+	logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)-8s %(message)s')
+elif sys.argv[-1] == '--INFO':
+	logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)-8s %(message)s')
+else:
+	logging.basicConfig(filename = 'info.log', level=logging.INFO, format='%(asctime)s %(levelname)-8s %(message)s')
+logger = logging.getLogger('Git-Crawler')
 
 
 # Creates two files for the queued links to crawl and the crawled links.
@@ -31,17 +44,17 @@ def read_json(jsonf):
 		json_data = json.load(json_file)
 		return json_data
 
+
 # Requests the content of a specific URL going trough a random selected proxy from the list
 def connect_url_proxy(url, proxy_list):
 	# url = 'https://httpbin.org/ip'		DEBUGGING
 	target_proxy = random.choice(proxy_list)
-	print('Targeting proxy: ' + target_proxy)
+	logger.info('Targeting proxy: ' + target_proxy)
 	try:
 		response = requests.get(url,proxies={"http": target_proxy, "https": target_proxy})
 		html_response = response.text
-		print('Connection successful!')
-		# print(html_response)
-		return response
+		logger.info('Connection successful!')
+		return html_response
 	except:
-		print("Skipping. Connnection error. Try again or check the proxy IP.")
+		logger.critical("Connnection error. Try again or check the availability of the proxy.")
 	
