@@ -93,18 +93,21 @@ def connect_url_proxy(url, proxy_list):
 
 
 def make_final_json(list_url_repositories, list_dic_langstats):
-	RESULT = []
-	for link in list_url_repositories:
-		owner = link.split('/')[3]
-		TEMP_URL = {}
-		TEMP_URL['url'] = link
-		for langstats in list_dic_langstats:
-			if langstats['owner'] == owner:
-				TEMP_URL['extra'] = langstats
-		RESULT += [TEMP_URL]
-	json.dumps(RESULT)
-	if sys.argv[-1] == '--INFO':
-		logger.info(RESULT)
-	else:
-		write_json('data_files/result.json', RESULT)		# In case of expecting a file output
-		print(RESULT)
+	try:
+		RESULT = []
+		for link in list_url_repositories:
+			owner = link.split('/')[3]
+			TEMP_URL = {}
+			TEMP_URL['url'] = link
+			for langstats in list_dic_langstats:
+				if langstats['owner'] == owner:
+					TEMP_URL['extra'] = langstats
+			RESULT += [TEMP_URL]
+		json.dumps(RESULT)
+		if sys.argv[-1] == '--INFO':
+			logger.info(RESULT)
+		else:
+			write_json('data_files/result.json', RESULT)		# In case of expecting a file output
+			print(RESULT)
+	except:
+		logger.error("Error. Cound't generate final output")
