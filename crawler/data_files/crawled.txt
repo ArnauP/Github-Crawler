@@ -1,0 +1,9 @@
+https://github.com/Firok/RestApp
+https://github.com/GetBlimp/django-rest-framework-jwt
+https://github.com/pyaf/djangular
+https://github.com/Foxfix/api_client
+https://github.com/vaibhavkollipara/ChatroomApi
+https://github.com/search?q=+python+django-rest-framework+jwt&type=Repositories
+https://github.com/City-of-Helsinki/tunnistamo
+https://github.com/chessbr/rest-jwt-permission
+https://github.com/lock8/django-rest-framework-jwt-refresh-token
