@@ -87,6 +87,14 @@ class Crawler:
 				continue
 			Crawler.queue.add(url)
 
+
+	# Updates data files
+	@staticmethod
+	def update_files():
+		set_to_file(Crawler.queue, Crawler.queue_file)
+		set_to_file(Crawler.crawled, Crawler.crawled_file)
+
+
 	# Returns all language statistics gathered
 	@staticmethod
 	def get_stats():
@@ -97,10 +105,3 @@ class Crawler:
 	@staticmethod
 	def get_links():
 		return Crawler.main_links
-
-
-	# Updates data files
-	@staticmethod
-	def update_files():
-		set_to_file(Crawler.queue, Crawler.queue_file)
-		set_to_file(Crawler.crawled, Crawler.crawled_file)

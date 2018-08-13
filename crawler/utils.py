@@ -60,9 +60,12 @@ def file_to_set(file_name):
 
 # Iterate through a set, each item will be a new line in the file
 def set_to_file(links, file):
-	delete_file_contents(file)
-	for link in links:
-		append_to_file(file, link)
+	try:
+		delete_file_contents(file)
+		for link in links:
+			append_to_file(file, link)
+	except:
+		logger.error('Error writing to file.')
 
 
 # Reads json data from the file
@@ -80,7 +83,6 @@ def write_json(path, jsonf):
 
 # Requests the content of a specific URL going trough a random selected proxy from the list
 def connect_url_proxy(url, proxy_list):
-	# url = 'https://httpbin.org/ip'		DEBUGGING
 	target_proxy = random.choice(proxy_list)
 	logger.info('Targeting proxy: ' + target_proxy)
 	try:

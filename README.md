@@ -33,12 +33,12 @@ The extras will also be appearing in the output so the final expected answer wou
   {
     "url": "https://github.com/atuldjadhav/DropBox-Cloud-Storage", 
     "extra": {
+      "owner": "atuldjadhav",
       "language_stats": {
         "CSS": "52.0%", 
         "JavaScript": "47.2%", 
         "HTML": "0.8%"
-      }, 
-      "owner": "atuldjadhav"
+      } 
     }
   }
 ]
@@ -66,74 +66,74 @@ The extras will also be appearing in the output so the final expected answer wou
 ```json
 [
   {
+    "url": "https://github.com/GetBlimp/django-rest-framework-jwt",
     "extra": {
+      "owner": "GetBlimp"},
       "language_stats": {
         "Python": "100.0%"
-      }, 
-      "owner": "GetBlimp"}, 
-    "url": "https://github.com/GetBlimp/django-rest-framework-jwt"
+      } 
   }, 
   {
+    "url": "https://github.com/lock8/django-rest-framework-jwt-refresh-token",
     "extra": {
+      "owner": "lock8"}, 
       "language_stats": {
         "Python": "96.6%", 
         "Makefile": "3.4%"
-      }, 
-      "owner": "lock8"}, 
-    "url": "https://github.com/lock8/django-rest-framework-jwt-refresh-token"
+      } 
   }, 
   {
+    "url": "https://github.com/pyaf/djangular",
     "extra": {
+      "owner": "pyaf"}, 
       "language_stats": {
         "JavaScript": "99.0%", 
         "Other": "1.0%"
-      }, 
-      "owner": "pyaf"}, 
-    "url": "https://github.com/pyaf/djangular"
+      } 
   }, 
   {
+    "url": "https://github.com/City-of-Helsinki/tunnistamo",
     "extra": {
+      "owner": "City-of-Helsinki"}, 
       "language_stats": {
         "HTML": "1.6%", 
         "Python": "97.3%", 
         "CSS": "1.1%"
-      }, 
-      "owner": "City-of-Helsinki"}, 
-    "url": "https://github.com/City-of-Helsinki/tunnistamo"
+      }
   },
   {
+    "url": "https://github.com/chessbr/rest-jwt-permission",
     "extra": {
+      "owner": "chessbr"}, 
       "language_stats": {
         "Python": "100.0%"
-      }, 
-      "owner": "chessbr"}, 
-    "url": "https://github.com/chessbr/rest-jwt-permission"
+      }
   }, 
   {
+    "url": "https://github.com/Firok/RestApp",
     "extra": {
+      "owner": "Firok"}, 
       "language_stats": {
         "HTML": "2.3%", 
         "Python": "97.7%"
-      }, 
-      "owner": "Firok"}, 
-    "url": "https://github.com/Firok/RestApp"
+      }
   }, 
   {
+    "url": "https://github.com/vaibhavkollipara/ChatroomApi",
     "extra": {
+      "owner": "vaibhavkollipara"}, 
       "language_stats": {
         "Python": "100.0%"
-      }, 
-      "owner": "vaibhavkollipara"}, 
-    "url": "https://github.com/vaibhavkollipara/ChatroomApi"
+      }
   }, 
   {
+    "url": "https://github.com/Foxfix/api_client",
     "extra": {
+      "owner": "Foxfix"}, 
       "language_stats": {
         "HTML": "3.1%", 
         "Python": "96.9%"
-      }, 
-      "owner": "Foxfix"}, 
-    "url": "https://github.com/Foxfix/api_client"
+      } 
   }
 ]
 ```
@@ -146,6 +146,7 @@ The extras will also be appearing in the output so the final expected answer wou
 * You can change search keywords, proxies and types supported in the json example files.
 * Supported types: "Repositories", "Wikis", "Issues"
 * Extra information will only show for the repositories, so the expected output will be diferent than the previously shown.
+* If the program does not complete its purpouse it might be because of proxy issues, in that case, run the program again, it should work propperly.
 
 ## Usage
 
