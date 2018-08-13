@@ -143,10 +143,7 @@ The extras will also be appearing in the output so the final expected answer wou
 
 * The speed and performance of the Crawler might be affected by the proxy and the conention conditions to it.
 * If a proxy fails to connect several times it might be needed to check the availavility or change the proxy.
-* You can change search keywords, proxies and types supported in the json example files.
-```text
-"Repositories", "Wikis", "Issues"
-```
+* You can change search keywords, proxies and types supported in the json example files ("Repositories", "Wikis", "Issues").
 * Extra information will only be shown for the repositories, so the expected output will be diferent than the previously shown.
 
 ## Usage
