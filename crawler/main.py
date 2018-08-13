@@ -85,11 +85,11 @@ if JSON_TYPE == "Repositories":
 	crawl()
 
 	# Build the final json for the output
-	make_final_json(Crawler.get_links(), Crawler.get_stats())
+	make_final_json_repo(Crawler.get_links(), Crawler.get_stats())
 else:
 	# Crawls the first page
 	response_content = connect_url_proxy(SEARCH_URL, proxy_list)
 	finder = Parser(response_content, BASE_URL, JSON_TYPE)
 
 	# Build the final json for the output
-	make_json(finder)
+	make_final_json_iw(finder)

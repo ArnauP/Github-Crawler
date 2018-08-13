@@ -94,7 +94,7 @@ def connect_url_proxy(url, proxy_list):
 		logger.critical("Connnection error. Try again or check the availability of the proxy.")
 
 
-def make_final_json(list_url_repositories, list_dic_langstats):
+def make_final_json_repo(list_url_repositories, list_dic_langstats):
 	try:
 		RESULT = []
 		for link in list_url_repositories:
@@ -114,7 +114,7 @@ def make_final_json(list_url_repositories, list_dic_langstats):
 	except:
 		logger.error("Error. Cound't generate final output")
 
-def make_json(parser):
+def make_final_json_iw(parser):
 	try:
 		RESULT = []
 		link_list = parser.link_finder()
