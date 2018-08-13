@@ -1,1 +1,4 @@
 *.pyc
+*.txt
+*.log
+crawler/data_files/result.json

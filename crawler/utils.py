@@ -65,7 +65,7 @@ def set_to_file(links, file):
 		for link in links:
 			append_to_file(file, link)
 	except:
-		logger.error('Error writing to file.')
+		pass
 
 
 # Reads json data from the file
