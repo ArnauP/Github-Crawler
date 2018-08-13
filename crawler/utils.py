@@ -124,8 +124,11 @@ def make_json(parser):
 			RESULT += [TEMP_URL]
 		if parser.link_finder() == []:
 			logger.info("Sorry, we couldn't find any matches for that search.")
-		logger.info(RESULT)
-		write_json('data_files/result.json', RESULT)
-		print(RESULT)
+		json.dumps(RESULT)
+		if sys.argv[-1] == '--INFO':
+			logger.info(RESULT)
+		else:
+			write_json('data_files/result.json', RESULT)		# In case of expecting a file output
+			print(RESULT)
 	except:
 		logger.error('Failed to operate Parser.')
