@@ -113,3 +113,19 @@ def make_final_json(list_url_repositories, list_dic_langstats):
 			print(RESULT)
 	except:
 		logger.error("Error. Cound't generate final output")
+
+def make_json(parser):
+	try:
+		RESULT = []
+		link_list = parser.link_finder()
+		for link in link_list:
+			TEMP_URL = {}
+			TEMP_URL['url'] = link
+			RESULT += [TEMP_URL]
+		if parser.link_finder() == []:
+			logger.info("Sorry, we couldn't find any matches for that search.")
+		logger.info(RESULT)
+		write_json('data_files/result.json', RESULT)
+		print(RESULT)
+	except:
+		logger.error('Failed to operate Parser.')

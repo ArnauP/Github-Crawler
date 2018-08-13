@@ -77,10 +77,19 @@ else:
 
 
 # Start threading
-Crawler(BASE_URL, SEARCH_URL, JSON_TYPE, proxy_list)
-create_workers()
-crawl()
+if JSON_TYPE == "Repositories":
 
+	# Start threading
+	Crawler(BASE_URL, SEARCH_URL, JSON_TYPE, proxy_list)
+	create_workers()
+	crawl()
 
-# Build the final json for the output
-make_final_json(Crawler.get_links(), Crawler.get_stats())
+	# Build the final json for the output
+	make_final_json(Crawler.get_links(), Crawler.get_stats())
+else:
+	# Crawls the first page
+	response_content = connect_url_proxy(SEARCH_URL, proxy_list)
+	finder = Parser(response_content, BASE_URL, JSON_TYPE)
+
+	# Build the final json for the output
+	make_json(finder)
