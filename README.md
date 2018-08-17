@@ -148,6 +148,8 @@ The extras will also be appearing in the output so the final expected answer wou
 
 ## Usage
 
+First of all you should update the proxy list in the json example file, you can use free proxy (ie. https://free-proxy-list.net/). Pick two proxies from the list and update both example1.json and example2.json.
+
 Given an example file (ie. example1.json) a normal command line to execute the program would be:
 
 * `python3 main.py example1.json`
